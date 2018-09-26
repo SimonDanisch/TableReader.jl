@@ -129,7 +129,7 @@ encoding conversion tool such as the `iconv` command or StringEncodings.jl.
 
 ```julia
 # Convert text encoding from Shift JIS (Japanese) to UTF8.
-readcsv(`iconv -f sjis -t utf8 somefile.csv`)
+readdlm(`iconv -f sjis -t utf8 somefile.csv`)
 ```
 
 A text file will be read chunk by chunk to save memory. The chunk size is

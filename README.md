@@ -99,16 +99,16 @@ update it if it is older than required, and then add this package as follows:
 using TableReader
 
 # Read a CSV file and return a DataFrame object.
-dataframe = readcsv("somefile.csv")
+dataframe = readdlm("somefile.csv")
 
 # Read gzip/xz/zstd compressed files.
-dataframe = readcsv("somefile.csv.gz")
+dataframe = readdlm("somefile.csv.gz")
 
 # Read a remote file as downloading.
-dataframe = readcsv("https://example.com/somefile.csv")
+dataframe = readdlm("https://example.com/somefile.csv")
 
 # Read stdout from a process.
-dataframe = readcsv(`unzip -p data.zip somefile.csv`)
+dataframe = readdlm(`unzip -p data.zip somefile.csv`)
 ```
 
 
@@ -126,10 +126,10 @@ object may be a filename, an URL string, a command, or any I/O object. For
 example, the following examples will work as you expect:
 
 ```julia
-readcsv("path/to/filename.csv")
-readcsv("https://example.com/path/to/filename.csv")
-readcsv(`unzip -p path/to/dataset.zip filename.csv`)
-readcsv(IOBuffer(some_csv_data))
+readdlm("path/to/filename.csv")
+readdlm("https://example.com/path/to/filename.csv")
+readdlm(`unzip -p path/to/dataset.zip filename.csv`)
+readdlm(IOBuffer(some_csv_data))
 ```
 
 In addition, these functions guess the file format from the magic bytes if any.
